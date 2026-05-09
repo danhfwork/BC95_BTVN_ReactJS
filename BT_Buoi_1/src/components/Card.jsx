@@ -2,17 +2,18 @@ import React from 'react'
 
 const Card = () => {
   return (
-    <div className='w-80 h-110 border-5 border-indigo-600 flex flex-col justify-between'>
-      <div className='bg-gray-400 w-full h-40 flex justify-center items-center'>
-        <p className='text-center text-3xl text-gray-300'>500 x 325</p>
-      </div>
-      <div>
-        <h3 className='text-center font-bold text-3xl py-4'>Card title</h3>
-        <p className='text-center py-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quos qui nemo.</p>
-      </div>
-      <div className='w-full h-auto bg-gray-100 flex justify-center items-center py-2'>
-        <button className='text-white bg-blue-500 px-4 py-2 rounded'>Find Out More!</button>
-      </div>
+    <div class="relative bg-white p-8 rounded-lg shadow-md max-w-sm w-full mx-4">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 p-6 rounded-2xl shadow-lg flex items-center justify-center">
+          <img className='w-10 h-10' src="/img/snowflake.png" alt="" />
+        </div>
+        <div class="mt-16 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 leading-tight mb-4 uppercase">
+                Snow card title
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga quasi repellendus voluptas deleniti id dolorum porro perspiciatis explicabo neque numquam.
+            </p>
+        </div>
     </div>
   )
 }

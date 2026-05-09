@@ -9,7 +9,9 @@ function App() {
       <div className="flex min-h-screen flex-col">
         <Header />
         <Welcome />
-        <div className="max-w-5xl mx-auto flex gap-4">
+        <div className="container mx-auto grid grid-cols-3 gap-20 my-10">
+          <Card />
+          <Card />
           <Card />
           <Card />
           <Card />
