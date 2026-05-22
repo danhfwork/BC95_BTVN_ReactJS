@@ -16,7 +16,7 @@ function App() {
     setCardDetail(newGlass)
   }
   return (
-    <div className="bg-blue-300 min-h-screen w-full">
+    <div className="bg-[url('glassesImage/background.jpg')] min-h-screen w-full bg-cover bg-center bg-no-repeat">
       <Header />
       <div className="container mx-auto flex flex-col justify-center items-center md:justify-around gap-5 md:flex-row mt-20">
         <Card glass={cardDetail} />
