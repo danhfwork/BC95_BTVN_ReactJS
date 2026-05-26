@@ -3,19 +3,28 @@ import React from "react";
 const ProductCart = ({
   handleOpenCart,
   handleCloseCart,
-  isOpen,
+  isOpenCart,
   cart,
   handleDeleteCart,
+  countCartItem,
+  handlePayment,
+  handleIncreaseInCart,
+  handleDecreaseInCart,
 }) => {
   return (
     <div>
       <button
         onClick={handleOpenCart}
-        className="cursor-pointer text-blue-500 text-2xl"
+        className="cursor-pointer text-blue-500 text-2xl relative"
       >
         <i className="fa-solid fa-cart-shopping" />
+        {countCartItem() > 0 && (
+          <span className="w-3 h-3 p-2 bg-red-500 rounded-full absolute -top-1 -right-1 flex items-center justify-center text-white text-sm">
+            {countCartItem()}
+          </span>
+        )}
       </button>
-      {isOpen && (
+      {isOpenCart && (
         <div className="fixed inset-0 z-50 grid place-items-center p-4">
           <div
             onClick={handleCloseCart}
@@ -80,13 +89,19 @@ const ProductCart = ({
                       </p>
                       <div className="flex items-center justify-between mt-2">
                         <div className="flex items-center border border-gray-300 rounded">
-                          <button className="px-2 py-0.5 text-gray-500 hover:bg-gray-100">
+                          <button
+                            onClick={() => handleDecreaseInCart(item)}
+                            className="px-2 py-0.5 text-gray-500 hover:bg-gray-100"
+                          >
                             -
                           </button>
                           <span className="px-2 text-xs font-medium text-gray-700">
                             {item.cartQuantity}{" "}
                           </span>
-                          <button className="px-2 py-0.5 text-gray-500 hover:bg-gray-100">
+                          <button
+                            onClick={() => handleIncreaseInCart(item)}
+                            className="px-2 py-0.5 text-gray-500 hover:bg-gray-100"
+                          >
                             +
                           </button>
                         </div>
@@ -133,7 +148,7 @@ const ProductCart = ({
               </div>
               <div>
                 <button
-                  onClick={handleCloseCart}
+                  onClick={handlePayment}
                   className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 rounded-lg text-sm transition"
                 >
                   Tiến hành thanh toán
